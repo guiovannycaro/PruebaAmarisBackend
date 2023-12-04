@@ -13,7 +13,6 @@ public class Users {
 	
 
 	public Users(int iduser, int userId, int id, String title, String body) {
-		super();
 		this.iduser = iduser;
 		this.userId = userId;
 		this.id = id;
