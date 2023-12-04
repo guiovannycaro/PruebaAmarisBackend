@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,7 @@ import com.amaris.models.Employee;
 import com.amaris.util.ExceptionUtil;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:9000")
 @RequestMapping("/amaris/Servicio/Employee/")
 @Api(value = "Consulta Empleados")
 public class EmployeeController {
@@ -76,6 +78,7 @@ public class EmployeeController {
 			return "{\"codigo\":\"500\",\"mensaje\":\"Mensaje Informativo\",\"descripcion\":\"El registro no fue agregado De Manera Correcta\"}";
 		}
 	}
+	
 	
 	@PostMapping(value = "/editEmployee" , consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "Consulta editar Employees", response = Employee.class, notes = "edit employee ")

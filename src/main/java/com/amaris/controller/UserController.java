@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -75,7 +76,7 @@ public class UserController {
 			return "{\"codigo\":\"500\",\"mensaje\":\"Mensaje Informativo\",\"descripcion\":\"El registro no fue editado De Manera Correcta\"}";
 		}
 	}
-	
+
 	@GetMapping(value = "/listUser")
 	@ApiOperation(value = "Consume y carga la informacion del servicio en la base de datos", response =  Users.class, notes = "Ingresa toda la informacion proveniente del servicio a la base de datos")
 	@ApiResponses({
@@ -97,6 +98,7 @@ public class UserController {
 			return Collections.emptyList();
 		}
 	}
+	
 	
 	@GetMapping(value = "/listUserById" , produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "Consume y carga la informacion del servicio en la base de datos", response =  Users.class, notes = "Ingresa toda la informacion proveniente del servicio a la base de datos")
